@@ -60,7 +60,7 @@ class MineSweeper {
   }
 
   neighbouringBombs(row, col) {
-    let numberOfBombs = 1;
+    let numberOfBombs = this.bombs[0].filter((x) => x == 1).length + this.bombs[1].filter((x) => x == 1).length + this.bombs[2].filter((x) => x == 1).length;
     this.board[row][col] = numberOfBombs;
     this.stepResult = `[Sandbox 3x3] ` + numberOfBombs + ` bombs around your square.`;
   }
