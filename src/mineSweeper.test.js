@@ -74,4 +74,21 @@ describe('US4 - Win cases', () => {
     game.step(1, 1);
     expect(game.getFinalResult()).toBe('+-+-+-+\n| | | |\n+-+-+-+\n| |8| |\n+-+-+-+\n| | | |\n+-+-+-+\n[Sandbox 3x3] the land is cleared! GOOD JOB!');
   });
+  it('(UAT-5) Given a board with bombs (0,1 1,0 1,1) When I step on 0,0, flag bomb fields around and step to all the remaining fields Then the land is cleared! GOOD JOB! screen appears. Game board: (2,2,1,*,*,2,3,*,2)', () => {
+    const game = new MineSweeper();
+    game.startingTable();
+    game.createBomb(0, 1);
+    game.createBomb(1, 0);
+    game.createBomb(1, 1);
+    game.step(0, 0);
+    game.putFlag(0, 1);
+    game.putFlag(1, 0);
+    game.putFlag(1, 1);
+    game.step(2, 0);
+    game.step(2, 1);
+    game.step(2, 2);
+    game.step(1, 2);
+    game.step(0, 2);
+    expect(game.getFinalResult()).toBe('+-+-+-+\n|2|2|1|\n+-+-+-+\n|*|*|2|\n+-+-+-+\n|3|*|2|\n+-+-+-+\n[Sandbox 3x3] the land is cleared! GOOD JOB!');
+  });
 });
