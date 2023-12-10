@@ -127,9 +127,13 @@ class MineSweeper {
     this.getStepResult();
   }
 
-  botPlay() {
+  botPlay(numberOfBombs) {
     console.log(`Bot play started`);
-    console.log(`Error: Max bomb number for 3x3 grid is 3`);
+    if (numberOfBombs > 3) {
+      console.log(`Error: Max bomb number for 3x3 grid is 3`);
+    } else {
+      this.startingTable();
+    }
   }
 }
 
