@@ -40,3 +40,15 @@ npm test -- --watchAll --collect-coverage --verbose
 ⚠ Scenario #1 Given a board with bombs (1,1) When I step on 1,0 Then 1 bombs around your square screen appears. Game board: ( , , ,1, , , , , )
 ⚠ Scenario #2 (UAT-3) Given a board with bombs (0,1 1,0 1,1) When I step on 0,0 Then 3 bombs around your square screen appears. Game board: ( , , , , , ,3, , )
 ⚠ Scenario #3 (UAT-4) Given a board with bombs (0,1 1,0 1,1) When I step on 0,0 and flag bomb fields around Then Square flagged as bomb screen appears. Game board: ( , , ,_,_, ,3,\*, )
+
+⚠ US #4 As a Mine Sweeper game spectator I want win conditions to be implemented so that I can verify that the player won the game.
+⚠ Scenario #1 Given a board with bombs (0,0 0,1 0,2 1,0 1,2 2,0 2,1 2,2) When I step on 1,1 Then the land is cleared! GOOD JOB! screen appears. Game board: ( , , , ,8, , , , )
+⚠ Scenario #2 (UAT-5) Given a board with bombs (0,1 1,0 1,1) When I step on 0,0, flag bomb fields around and step to all the remaining fields Then the land is cleared! GOOD JOB! screen appears. Game board: (2,2,1,_,_,2,3,\*,2)
+⚠ Scenario #3 (UAT-6) Given a board with bombs (2,2) When I step on 0,0 Then the recursive check should run and the land is cleared! GOOD JOB! screen appears. Game board: (_,1, ,_,1,1,_,_,\_)
+
+⚠ US #5 As a Mine Sweeper game spectator I want to run the game in bot mode so that I can watch an automated match.
+⚠ Scenario #1 Given a botplay with bomb number validation When I enter a number greater than 3 (4), Then it displays an error message (log contains 'Error: Max bomb number for 3x3 grid is 3').
+⚠ Scenario #2 Given a botplay with end-to-end play When I start it with a valid bomb number (1) Then the start screen appears (log contains 'Game created').
+⚠ Scenario #3 Given a botplay with end-to-end play When I start it with a valid bomb number (1) Then one bomb is added to the bomb table. Bomb board is not: (0,0,0,0,0,0,0,0,0).
+⚠ Scenario #4 Given a botplay with end-to-end play When I start it with a valid bomb number (2) Then the bot makes at least one move. Board is not: ( , , , , , , , , ).
+⚠ Scenario #5 Given a botplay with end-to-end play When I start it with a valid bomb number (3) Then the end screen is reached (last log contains '!').

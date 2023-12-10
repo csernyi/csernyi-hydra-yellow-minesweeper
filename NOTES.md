@@ -26,7 +26,7 @@ Mine Sweeper game will need:
 - ✅ Environment setup
 - ✅ Preparing js and test.js files
 - ✅ Planning in NOTES.md
-- 🚧 Defining User Stories in README.md
+- ✅ Defining User Stories in README.md
 
-- ⚠ US 1 (Board creation)
-  - ⚠ UAT 1.1
+- 🚧 US 1 (Board creation)
+  - 🚧 UAT 1.1
