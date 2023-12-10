@@ -136,6 +136,7 @@ class MineSweeper {
         this.createBomb(0, i);
       }
       this.startingTable();
+      this.step(1, 0);
     }
   }
 }
