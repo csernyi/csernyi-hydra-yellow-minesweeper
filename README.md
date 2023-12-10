@@ -32,9 +32,9 @@ npm test -- --watchAll --collect-coverage --verbose
 ✅ US #1 As a Mine Sweeper game spectator I want to have a blank starting board drawn so that I can enjoy the game visually.
 ✅ Scenario #1 (UAT-1) Given a new game When I start it Then Game created screen appears with a 3x3 empty grid. Game board: ( , , , , , , , , )
 
-🚧 US #2 As a Mine Sweeper game spectator I want to be able to place a bomb and trigger it so that I can verify that the game has lose conditions fulfilled.
+✅ US #2 As a Mine Sweeper game spectator I want to be able to place a bomb and trigger it so that I can verify that the game has lose conditions fulfilled.
 ✅ Scenario #1 Given an empty board When I add bomb to 1,1 Then bomb is registered on the bomb table. Bomb board: (0,0,0,0,1,0,0,0,0)
-🚧 Scenario #2 (UAT-2) Given a board with bombs (1,1) When I step on 1,1 Then Game Over screen appears. Game board: ( , , , ,X, , , , )
+✅ Scenario #2 (UAT-2) Given a board with bombs (1,1) When I step on 1,1 Then Game Over screen appears. Game board: ( , , , ,X, , , , )
 
 ⚠ US #3 As a Mine Sweeper game spectator I want to be able to reveal numbered fields next to bombs and mark the bombs next to it so that I will have a chance to win the game.
 ⚠ Scenario #1 Given a board with bombs (1,1) When I step on 1,0 Then 1 bombs around your square screen appears. Game board: ( , , ,1, , , , , )
