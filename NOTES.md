@@ -53,6 +53,6 @@ Mine Sweeper game will need:
 
 - 🚧 US 4 (Win cases)
   - ✅ UAT 4.1
-  - 🚧 UAT 4.2
+  - ✅ UAT 4.2
   - ⚠ UAT 4.3
   - ⚠ Refactor

@@ -52,10 +52,10 @@ class MineSweeper {
 
   getFinalResult() {
     let result = this.currentGameStatus();
-    if (JSON.stringify(this.bombs) == '[[1,1,1],[1,0,1],[1,1,1]]' && JSON.stringify(this.board) == '[[" "," "," "],[" ",8," "],[" "," "," "]]') {
-      result += `[Sandbox 3x3] the land is cleared! GOOD JOB!`;
-    } else {
+    if (this.stepOnBomb) {
       result += `[Sandbox 3x3] BOOM! - Game Over.`;
+    } else {
+      result += `[Sandbox 3x3] the land is cleared! GOOD JOB!`;
     }
     console.log(result);
     return result;
