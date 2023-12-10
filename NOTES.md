@@ -35,7 +35,7 @@ Mine Sweeper game will need:
 
 - 🚧 US 2 (Bomb placement and lose cases)
 
-  - 🚧 UAT 2.1
+  - ✅ UAT 2.1
   - ⚠ UAT 2.2
   - ⚠ Refactor
 
