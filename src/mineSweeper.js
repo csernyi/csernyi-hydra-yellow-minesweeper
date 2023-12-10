@@ -127,6 +127,19 @@ class MineSweeper {
     this.getStepResult();
   }
 
+  shuffleBombs() {
+    for (let i = 0; i < this.bombs.length; i++) {
+      for (let j = 0; j < this.bombs[i].length; j++) {
+        let i1 = Math.floor(Math.random() * this.bombs.length);
+        let j1 = Math.floor(Math.random() * this.bombs.length);
+
+        var temp = this.bombs[i][j];
+        this.bombs[i][j] = this.bombs[i1][j1];
+        this.bombs[i1][j1] = temp;
+      }
+    }
+  }
+
   botPlay(numberOfBombs) {
     console.log(`Bot play started`);
     if (numberOfBombs > 3) {
@@ -135,6 +148,7 @@ class MineSweeper {
       for (let i = 0; i < numberOfBombs; i++) {
         this.createBomb(0, i);
       }
+      this.shuffleBombs();
 
       const randomItem = (arr) => arr.splice((Math.random() * arr.length) | 0, 1);
       const arr = [

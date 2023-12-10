@@ -63,10 +63,10 @@ Mine Sweeper game will need:
 
 ### Pomodoro 4
 
-- 🚧 US 5 (Bot mode)
+- ✅ US 5 (Bot mode)
   - ✅ UAT 5.1
   - ✅ UAT 5.2
   - ✅ UAT 5.3
   - ✅ UAT 5.4
   - ✅ UAT 5.5
-  - ⚠ Refactor
+  - ✅ Refactor
