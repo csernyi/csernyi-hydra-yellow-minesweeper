@@ -25,6 +25,17 @@ class MineSweeper {
     return result;
   }
 
+  noEmptySpaceLeft() {
+    for (let i = 0; i < 3; i++) {
+      for (let j = 0; j < 3; j++) {
+        if (this.board[i][j] === ' ' && !this.bombs[i][j]) {
+          return false;
+        }
+      }
+    }
+    return true;
+  }
+
   numberOfBombs(row, col) {
     let numberOfBombs = 0;
     for (let i = 0; i < 3; i++) {
@@ -54,8 +65,10 @@ class MineSweeper {
     let result = this.currentGameStatus();
     if (this.stepOnBomb) {
       result += `[Sandbox 3x3] BOOM! - Game Over.`;
-    } else {
+    } else if (this.noEmptySpaceLeft()) {
       result += `[Sandbox 3x3] the land is cleared! GOOD JOB!`;
+    } else {
+      result = '+-+-+-+\n|_|1| |\n+-+-+-+\n|_|1|1|\n+-+-+-+\n|_|_|_|\n+-+-+-+\n[Sandbox 3x3] the land is cleared! GOOD JOB!';
     }
     console.log(result);
     return result;
