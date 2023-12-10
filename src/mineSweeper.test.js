@@ -99,3 +99,13 @@ describe('US4 - Win cases', () => {
     expect(game.getFinalResult()).toBe('+-+-+-+\n|_|1| |\n+-+-+-+\n|_|1|1|\n+-+-+-+\n|_|_|_|\n+-+-+-+\n[Sandbox 3x3] the land is cleared! GOOD JOB!');
   });
 });
+
+describe('US5 - Auto game mode', () => {
+  it('Given a botplay with bomb number validation When I enter a number greater than 3 (4), Then it displays an error message (log contains Error: Max bomb number for 3x3 grid is 3).', () => {
+    const logSpy = jest.spyOn(global.console, 'log');
+    const game = new MineSweeper();
+    game.botPlay(4);
+    expect(logSpy).toHaveBeenCalledWith(expect.stringContaining('Error: Max bomb number for 3x3 grid is 3'));
+    logSpy.mockRestore();
+  });
+});
