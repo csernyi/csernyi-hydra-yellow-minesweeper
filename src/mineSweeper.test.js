@@ -133,4 +133,11 @@ describe('US5 - Auto game mode', () => {
       [' ', ' ', ' '],
     ]);
   });
+  it('Given a botplay with end-to-end play When I start it with a valid bomb number (3) Then the end screen is reached (last log contains !).', () => {
+    const logSpy = jest.spyOn(global.console, 'log');
+    const game = new MineSweeper();
+    game.botPlay(3);
+    expect(logSpy).toHaveBeenLastCalledWith(expect.stringContaining('!'));
+    logSpy.mockRestore();
+  });
 });

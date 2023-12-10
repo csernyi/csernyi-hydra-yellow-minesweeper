@@ -51,4 +51,4 @@ npm test -- --watchAll --collect-coverage --verbose
 ✅ Scenario #2 Given a botplay with end-to-end play When I start it with a valid bomb number (1) Then the start screen appears (log contains 'Game created').
 ✅ Scenario #3 Given a botplay with end-to-end play When I start it with a valid bomb number (1) Then one bomb is added to the bomb table. Bomb board is not: (0,0,0,0,0,0,0,0,0).
 ✅ Scenario #4 Given a botplay with end-to-end play When I start it with a valid bomb number (2) Then the bot makes at least one move. Board is not: ( , , , , , , , , ).
-⚠ Scenario #5 Given a botplay with end-to-end play When I start it with a valid bomb number (3) Then the end screen is reached (last log contains '!').
+🚧 Scenario #5 Given a botplay with end-to-end play When I start it with a valid bomb number (3) Then the end screen is reached (last log contains '!').
