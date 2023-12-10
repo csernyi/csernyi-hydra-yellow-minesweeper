@@ -108,4 +108,11 @@ describe('US5 - Auto game mode', () => {
     expect(logSpy).toHaveBeenCalledWith(expect.stringContaining('Error: Max bomb number for 3x3 grid is 3'));
     logSpy.mockRestore();
   });
+  it('Given a botplay with end-to-end play When I start it with a valid bomb number (1) Then the start screen appears (log contains Game created).', () => {
+    const logSpy = jest.spyOn(global.console, 'log');
+    const game = new MineSweeper();
+    game.botPlay(1);
+    expect(logSpy).toHaveBeenCalledWith(expect.stringContaining('Game created'));
+    logSpy.mockRestore();
+  });
 });
