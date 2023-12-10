@@ -36,10 +36,10 @@ npm test -- --watchAll --collect-coverage --verbose
 ✅ Scenario #1 Given an empty board When I add bomb to 1,1 Then bomb is registered on the bomb table. Bomb board: (0,0,0,0,1,0,0,0,0)
 ✅ Scenario #2 (UAT-2) Given a board with bombs (1,1) When I step on 1,1 Then Game Over screen appears. Game board: ( , , , ,X, , , , )
 
-🚧 US #3 As a Mine Sweeper game spectator I want to be able to reveal numbered fields next to bombs and mark the bombs next to it so that I will have a chance to win the game.
+✅ US #3 As a Mine Sweeper game spectator I want to be able to reveal numbered fields next to bombs and mark the bombs next to it so that I will have a chance to win the game.
 ✅ Scenario #1 Given a board with bombs (1,1) When I step on 1,0 Then 1 bombs around your square screen appears. Game board: ( , , ,1, , , , , )
 ✅ Scenario #2 (UAT-3) Given a board with bombs (0,1 1,0 1,1) When I step on 0,0 Then 3 bombs around your square screen appears. Game board: ( , , , , , ,3, , )
-🚧 Scenario #3 (UAT-4) Given a board with bombs (0,1 1,0 1,1) When I step on 0,0 and flag bomb fields around Then Square flagged as bomb screen appears. Game board: ( , , ,_,_, ,3,\*, )
+✅ Scenario #3 (UAT-4) Given a board with bombs (0,1 1,0 1,1) When I step on 0,0 and flag bomb fields around Then Square flagged as bomb screen appears. Game board: ( , , ,_,_, ,3,\*, )
 
 ⚠ US #4 As a Mine Sweeper game spectator I want win conditions to be implemented so that I can verify that the player won the game.
 ⚠ Scenario #1 Given a board with bombs (0,0 0,1 0,2 1,0 1,2 2,0 2,1 2,2) When I step on 1,1 Then the land is cleared! GOOD JOB! screen appears. Game board: ( , , , ,8, , , , )

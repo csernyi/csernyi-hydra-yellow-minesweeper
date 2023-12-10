@@ -12,6 +12,7 @@ class MineSweeper {
     ];
     this.stepOnBomb = false;
     this.BOMB = 'X';
+    this.FLAG = '*';
   }
 
   createBomb(row, col) {
@@ -63,6 +64,12 @@ class MineSweeper {
     let numberOfBombs = this.bombs[0].filter((x) => x == 1).length + this.bombs[1].filter((x) => x == 1).length + this.bombs[2].filter((x) => x == 1).length;
     this.board[row][col] = numberOfBombs;
     this.stepResult = `[Sandbox 3x3] ` + numberOfBombs + ` bombs around your square.`;
+  }
+
+  putFlag(row, col) {
+    this.board[row][col] = this.FLAG;
+    this.stepResult = `[Sandbox 3x3] Square flagged as bomb.`;
+    this.getStepResult();
   }
 }
 
