@@ -28,5 +28,5 @@ Mine Sweeper game will need:
 - ✅ Planning in NOTES.md
 - ✅ Defining User Stories in README.md
 
-- 🚧 US 1 (Board creation)
-  - 🚧 UAT 1.1
+- ✅ US 1 (Board creation)
+  - ✅ UAT 1.1
