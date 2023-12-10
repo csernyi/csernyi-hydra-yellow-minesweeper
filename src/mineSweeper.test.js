@@ -36,4 +36,13 @@ describe('US3 - Revealing numbered fields next to bombs and marking the bombs', 
     game.step(1, 0);
     expect(game.getStepResult()).toBe('+-+-+-+\n| | | |\n+-+-+-+\n|1| | |\n+-+-+-+\n| | | |\n+-+-+-+\n[Sandbox 3x3] 1 bombs around your square.');
   });
+  it('(UAT-3) Given a board with bombs (0,1 1,0 1,1) When I step on 0,0 Then 3 bombs around your square screen appears. Game board: ( , , , , , ,3, , )', () => {
+    const game = new MineSweeper();
+    game.startingTable();
+    game.createBomb(0, 1);
+    game.createBomb(1, 0);
+    game.createBomb(1, 1);
+    game.step(0, 0);
+    expect(game.getStepResult()).toBe('+-+-+-+\n| | | |\n+-+-+-+\n| | | |\n+-+-+-+\n|3| | |\n+-+-+-+\n[Sandbox 3x3] 3 bombs around your square.');
+  });
 });
