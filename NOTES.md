@@ -30,3 +30,16 @@ Mine Sweeper game will need:
 
 - ✅ US 1 (Board creation)
   - ✅ UAT 1.1
+
+### Pomodoro 2
+
+- 🚧 US 2 (Bomb placement and lose cases)
+
+  - 🚧 UAT 2.1
+  - ⚠ UAT 2.2
+  - ⚠ Refactor
+
+- ⚠ US 3 (Reveal numbered fields next to bombs and mark the bombs)
+  - ⚠ UAT 3.1
+  - ⚠ UAT 3.2
+  - ⚠ UAT 3.3

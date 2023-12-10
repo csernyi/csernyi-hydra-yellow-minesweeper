@@ -6,3 +6,17 @@ describe('US1 - Board creation', () => {
     expect(game.startingTable()).toBe('+-+-+-+\n| | | |\n+-+-+-+\n| | | |\n+-+-+-+\n| | | |\n+-+-+-+\n[Sandbox 3x3] Game created');
   });
 });
+
+describe('US2 - Bomb placement and lose cases', () => {
+  it('Given an empty board When I add bomb to 1,1 Then bomb is registered on the bomb table. Bomb board: (0,0,0,0,1,0,0,0,0)', () => {
+    const game = new MineSweeper();
+    game.createBomb(1, 1);
+    expect(game.bombs).toEqual(
+      expect.arrayContaining([
+        [0, 0, 0],
+        [0, 1, 0],
+        [0, 0, 0],
+      ]),
+    );
+  });
+});
