@@ -19,4 +19,11 @@ describe('US2 - Bomb placement and lose cases', () => {
       ]),
     );
   });
+  it('(UAT-2) Given a board with bombs (1,1) When I step on 1,1 Then Game Over screen appears. Game board: ( , , , ,X, , , , )', () => {
+    const game = new MineSweeper();
+    game.startingTable();
+    game.createBomb(1, 1);
+    game.step(1, 1);
+    expect(game.getFinalResult()).toBe('+-+-+-+\n| | | |\n+-+-+-+\n| |X| |\n+-+-+-+\n| | | |\n+-+-+-+\n[Sandbox 3x3] BOOM! - Game Over.');
+  });
 });
