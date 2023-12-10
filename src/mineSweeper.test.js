@@ -27,3 +27,13 @@ describe('US2 - Bomb placement and lose cases', () => {
     expect(game.getFinalResult()).toBe('+-+-+-+\n| | | |\n+-+-+-+\n| |X| |\n+-+-+-+\n| | | |\n+-+-+-+\n[Sandbox 3x3] BOOM! - Game Over.');
   });
 });
+
+describe('US3 - Revealing numbered fields next to bombs and marking the bombs', () => {
+  it('Given a board with bombs (1,1) When I step on 1,0 Then 1 bombs around your square screen appears. Game board: ( , , ,1, , , , , )', () => {
+    const game = new MineSweeper();
+    game.startingTable();
+    game.createBomb(1, 1);
+    game.step(1, 0);
+    expect(game.getStepResult()).toBe('+-+-+-+\n| | | |\n+-+-+-+\n|1| | |\n+-+-+-+\n| | | |\n+-+-+-+\n[Sandbox 3x3] 1 bombs around your square.');
+  });
+});
