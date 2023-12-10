@@ -41,8 +41,8 @@ npm test -- --watchAll --collect-coverage --verbose
 ✅ Scenario #2 (UAT-3) Given a board with bombs (0,1 1,0 1,1) When I step on 0,0 Then 3 bombs around your square screen appears. Game board: ( , , , , , ,3, , )
 ✅ Scenario #3 (UAT-4) Given a board with bombs (0,1 1,0 1,1) When I step on 0,0 and flag bomb fields around Then Square flagged as bomb screen appears. Game board: ( , , ,_,_, ,3,\*, )
 
-⚠ US #4 As a Mine Sweeper game spectator I want win conditions to be implemented so that I can verify that the player won the game.
-⚠ Scenario #1 Given a board with bombs (0,0 0,1 0,2 1,0 1,2 2,0 2,1 2,2) When I step on 1,1 Then the land is cleared! GOOD JOB! screen appears. Game board: ( , , , ,8, , , , )
+🚧 US #4 As a Mine Sweeper game spectator I want win conditions to be implemented so that I can verify that the player won the game.
+🚧 Scenario #1 Given a board with bombs (0,0 0,1 0,2 1,0 1,2 2,0 2,1 2,2) When I step on 1,1 Then the land is cleared! GOOD JOB! screen appears. Game board: ( , , , ,8, , , , )
 ⚠ Scenario #2 (UAT-5) Given a board with bombs (0,1 1,0 1,1) When I step on 0,0, flag bomb fields around and step to all the remaining fields Then the land is cleared! GOOD JOB! screen appears. Game board: (2,2,1,_,_,2,3,\*,2)
 ⚠ Scenario #3 (UAT-6) Given a board with bombs (2,2) When I step on 0,0 Then the recursive check should run and the land is cleared! GOOD JOB! screen appears. Game board: (_,1, ,_,1,1,_,_,\_)
 

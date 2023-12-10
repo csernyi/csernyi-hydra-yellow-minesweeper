@@ -58,3 +58,20 @@ describe('US3 - Revealing numbered fields next to bombs and marking the bombs', 
     expect(game.getStepResult()).toBe('+-+-+-+\n| | | |\n+-+-+-+\n|*|*| |\n+-+-+-+\n|3|*| |\n+-+-+-+\n[Sandbox 3x3] Square flagged as bomb.');
   });
 });
+
+describe('US4 - Win cases', () => {
+  it('Given a board with bombs (0,0 0,1 0,2 1,0 1,2 2,0 2,1 2,2) When I step on 1,1 Then the land is cleared! GOOD JOB! screen appears. Game board: ( , , , ,8, , , , )', () => {
+    const game = new MineSweeper();
+    game.startingTable();
+    game.createBomb(0, 0);
+    game.createBomb(0, 1);
+    game.createBomb(0, 2);
+    game.createBomb(1, 0);
+    game.createBomb(1, 2);
+    game.createBomb(2, 0);
+    game.createBomb(2, 1);
+    game.createBomb(2, 2);
+    game.step(1, 1);
+    expect(game.getFinalResult()).toBe('+-+-+-+\n| | | |\n+-+-+-+\n| |8| |\n+-+-+-+\n| | | |\n+-+-+-+\n[Sandbox 3x3] the land is cleared! GOOD JOB!');
+  });
+});
