@@ -115,4 +115,13 @@ describe('US5 - Auto game mode', () => {
     expect(logSpy).toHaveBeenCalledWith(expect.stringContaining('Game created'));
     logSpy.mockRestore();
   });
+  it('Given a botplay with end-to-end play When I start it with a valid bomb number (1) Then one bomb is added to the bomb table. Bomb board is not: (0,0,0,0,0,0,0,0,0).', () => {
+    const game = new MineSweeper();
+    game.botPlay(1);
+    expect(game.bombs).not.toEqual([
+      [0, 0, 0],
+      [0, 0, 0],
+      [0, 0, 0],
+    ]);
+  });
 });
