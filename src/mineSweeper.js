@@ -32,6 +32,11 @@ class MineSweeper {
     return result;
   }
 
+  getStepResult() {
+    console.log(this.currentGameStatus() + this.stepResult);
+    return this.currentGameStatus() + this.stepResult;
+  }
+
   getFinalResult() {
     let result = this.currentGameStatus();
     result += `[Sandbox 3x3] BOOM! - Game Over.`;
@@ -40,13 +45,24 @@ class MineSweeper {
   }
 
   step(row, col) {
-    this.checkIfStepOnBomb(row, col);
+    if (this.checkIfStepOnBomb(row, col)) {
+      return;
+    }
+    this.neighbouringBombs(row, col);
   }
 
   checkIfStepOnBomb(row, col) {
-    this.board[row][col] = this.BOMB;
-    this.stepOnBomb = true;
-    return true;
+    if (this.bombs[row][col]) {
+      this.board[row][col] = this.BOMB;
+      this.stepOnBomb = true;
+      return true;
+    }
+  }
+
+  neighbouringBombs(row, col) {
+    let numberOfBombs = 1;
+    this.board[row][col] = numberOfBombs;
+    this.stepResult = `[Sandbox 3x3] ` + numberOfBombs + ` bombs around your square.`;
   }
 }
 
