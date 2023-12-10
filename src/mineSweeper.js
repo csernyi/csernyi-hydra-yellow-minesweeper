@@ -10,9 +10,12 @@ class MineSweeper {
       [0, 0, 0],
       [0, 0, 0],
     ];
+    this.firstStep = true;
+    this.stepResult = '';
     this.stepOnBomb = false;
     this.BOMB = 'X';
     this.FLAG = '*';
+    this.NOBOMBSNEAR = '_';
   }
 
   createBomb(row, col) {
@@ -65,10 +68,9 @@ class MineSweeper {
     let result = this.currentGameStatus();
     if (this.stepOnBomb) {
       result += `[Sandbox 3x3] BOOM! - Game Over.`;
-    } else if (this.noEmptySpaceLeft()) {
+    }
+    if (this.noEmptySpaceLeft()) {
       result += `[Sandbox 3x3] the land is cleared! GOOD JOB!`;
-    } else {
-      result = '+-+-+-+\n|_|1| |\n+-+-+-+\n|_|1|1|\n+-+-+-+\n|_|_|_|\n+-+-+-+\n[Sandbox 3x3] the land is cleared! GOOD JOB!';
     }
     console.log(result);
     return result;
@@ -78,7 +80,12 @@ class MineSweeper {
     if (this.checkIfStepOnBomb(row, col)) {
       return;
     }
+    if (this.firstStep == false) {
+      console.log(this.currentGameStatus() + this.stepResult);
+    }
+    this.firstStep = false;
     this.neighbouringBombs(row, col);
+    this.noBombsNearby(row, col);
   }
 
   checkIfStepOnBomb(row, col) {
@@ -91,8 +98,27 @@ class MineSweeper {
 
   neighbouringBombs(row, col) {
     let numberOfBombs = this.numberOfBombs(row, col);
-    this.board[row][col] = numberOfBombs;
-    this.stepResult = `[Sandbox 3x3] ` + numberOfBombs + ` bombs around your square.`;
+    if (numberOfBombs > 0 && !this.noEmptySpaceLeft()) {
+      this.board[row][col] = numberOfBombs;
+      this.stepResult = `[Sandbox 3x3] ` + numberOfBombs + ` bombs around your square.`;
+    }
+  }
+
+  noBombsNearby(row, col) {
+    if (this.numberOfBombs(row, col) === 0) {
+      this.board[row][col] = this.NOBOMBSNEAR;
+      this.checkNeighbours(row, col);
+    }
+  }
+
+  checkNeighbours(row, col) {
+    for (let i = Math.max(row - 1, 0); i <= Math.min(row + 1, 2); i++) {
+      for (let j = Math.max(col - 1, 0); j <= Math.min(col + 1, 2); j++) {
+        if (this.board[i][j] === ' ' && !this.bombs[i][j]) {
+          this.step(i, j);
+        }
+      }
+    }
   }
 
   putFlag(row, col) {
