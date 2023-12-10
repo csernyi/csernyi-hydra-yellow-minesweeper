@@ -124,4 +124,13 @@ describe('US5 - Auto game mode', () => {
       [0, 0, 0],
     ]);
   });
+  it('Given a botplay with end-to-end play When I start it with a valid bomb number (2) Then the bot makes at least one move. Board is not: ( , , , , , , , , ).', () => {
+    const game = new MineSweeper();
+    game.botPlay(2);
+    expect(game.board).not.toEqual([
+      [' ', ' ', ' '],
+      [' ', ' ', ' '],
+      [' ', ' ', ' '],
+    ]);
+  });
 });
