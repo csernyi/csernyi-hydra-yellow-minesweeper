@@ -25,6 +25,18 @@ class MineSweeper {
     return result;
   }
 
+  numberOfBombs(row, col) {
+    let numberOfBombs = 0;
+    for (let i = 0; i < 3; i++) {
+      for (let j = 0; j < 3; j++) {
+        if (this.bombs[row + (i - 1)] && this.bombs[row + (i - 1)][col + (j - 1)]) {
+          numberOfBombs++;
+        }
+      }
+    }
+    return numberOfBombs;
+  }
+
   currentGameStatus() {
     let result = `+-+-+-+\n|` + this.board[2][0] + `|` + this.board[2][1] + `|` + this.board[2][2] + `|\n`;
     result += `+-+-+-+\n|` + this.board[1][0] + `|` + this.board[1][1] + `|` + this.board[1][2] + `|\n`;
@@ -61,7 +73,7 @@ class MineSweeper {
   }
 
   neighbouringBombs(row, col) {
-    let numberOfBombs = this.bombs[0].filter((x) => x == 1).length + this.bombs[1].filter((x) => x == 1).length + this.bombs[2].filter((x) => x == 1).length;
+    let numberOfBombs = this.numberOfBombs(row, col);
     this.board[row][col] = numberOfBombs;
     this.stepResult = `[Sandbox 3x3] ` + numberOfBombs + ` bombs around your square.`;
   }

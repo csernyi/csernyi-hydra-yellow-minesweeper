@@ -43,4 +43,16 @@ Mine Sweeper game will need:
   - ✅ UAT 3.1
   - ✅ UAT 3.2
   - ✅ UAT 3.3
+  - 🚧 Refactor
+
+### Pomodoro 3
+
+- ✅ US 3 (Revealing numbered fields next to bombs and marking the bombs)
+
+  - ✅ Refactor
+
+- ⚠ US 4 (Win cases)
+  - ⚠ UAT 4.1
+  - ⚠ UAT 4.2
+  - ⚠ UAT 4.3
   - ⚠ Refactor
