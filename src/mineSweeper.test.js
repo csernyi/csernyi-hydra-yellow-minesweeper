@@ -91,4 +91,11 @@ describe('US4 - Win cases', () => {
     game.step(0, 2);
     expect(game.getFinalResult()).toBe('+-+-+-+\n|2|2|1|\n+-+-+-+\n|*|*|2|\n+-+-+-+\n|3|*|2|\n+-+-+-+\n[Sandbox 3x3] the land is cleared! GOOD JOB!');
   });
+  it('(UAT-6) Given a board with bombs (2,2) When I step on 0,0 Then the recursive check should run and the land is cleared! GOOD JOB! screen appears. Game board: (_,1, ,_,1,1,_,_,_)', () => {
+    const game = new MineSweeper();
+    game.startingTable();
+    game.createBomb(2, 2);
+    game.step(0, 0);
+    expect(game.getFinalResult()).toBe('+-+-+-+\n|_|1| |\n+-+-+-+\n|_|1|1|\n+-+-+-+\n|_|_|_|\n+-+-+-+\n[Sandbox 3x3] the land is cleared! GOOD JOB!');
+  });
 });
