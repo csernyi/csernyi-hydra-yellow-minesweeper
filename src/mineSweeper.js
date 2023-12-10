@@ -135,8 +135,27 @@ class MineSweeper {
       for (let i = 0; i < numberOfBombs; i++) {
         this.createBomb(0, i);
       }
+
+      const randomItem = (arr) => arr.splice((Math.random() * arr.length) | 0, 1);
+      const arr = [
+        [2, 0],
+        [2, 1],
+        [2, 2],
+        [1, 0],
+        [1, 1],
+        [1, 2],
+        [0, 0],
+        [0, 1],
+        [0, 2],
+      ];
       this.startingTable();
-      this.step(1, 0);
+
+      do {
+        var storeRandomArray = [...randomItem(arr)];
+        this.step(storeRandomArray[0][0], storeRandomArray[0][1]);
+      } while (this.noEmptySpaceLeft() === false && this.stepOnBomb === false);
+
+      this.getFinalResult();
     }
   }
 }
