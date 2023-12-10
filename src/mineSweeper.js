@@ -126,6 +126,11 @@ class MineSweeper {
     this.stepResult = `[Sandbox 3x3] Square flagged as bomb.`;
     this.getStepResult();
   }
+
+  botPlay() {
+    console.log(`Bot play started`);
+    console.log(`Error: Max bomb number for 3x3 grid is 3`);
+  }
 }
 
 module.exports = MineSweeper;
