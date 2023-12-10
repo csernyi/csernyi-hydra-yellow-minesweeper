@@ -132,6 +132,9 @@ class MineSweeper {
     if (numberOfBombs > 3) {
       console.log(`Error: Max bomb number for 3x3 grid is 3`);
     } else {
+      for (let i = 0; i < numberOfBombs; i++) {
+        this.createBomb(0, i);
+      }
       this.startingTable();
     }
   }
